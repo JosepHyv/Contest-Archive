@@ -1,4 +1,3 @@
-#include<map>
 #include<iostream>
 using namespace std;
 
@@ -56,9 +55,9 @@ main()
 	{
 		cin>>x>>y;
 		if( x == 1)
-			update(1,1,(1e6),y);
+		   update(1,1,(1e6),y);
 		else
-			cout<<querry(1,1,(1e6),1,y)<<"\n";
+		   cout<<querry(1,1,(1e6),1,y)<<"\n";
 	}
 	/*cout<<"\n";
 	for(int c = 0 ; c<=300; c++)
