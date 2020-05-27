@@ -35,6 +35,7 @@ ll t,n,k;
 
 void solve()
 {
+	// -- edit me --
 	return;
 }
 
@@ -45,7 +46,7 @@ main()
 	cin>>t;
 	while( t--)
 	{
-
+		// create our solution c:
 	}
 
 }
