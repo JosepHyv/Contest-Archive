@@ -32,7 +32,7 @@ ll t,n,k;
 
 void solve()
 {
-	return 0;
+	return;
 }
 
 main()
