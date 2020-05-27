@@ -4,7 +4,7 @@ for use in codeforces or others online contest
 
 ID: JosepHy	
 LANG: C++14
-INSPIRATION: Vanessa Rogrigues Medina 
+INSPIRATION: Vanessa Rodriguez Medina 
 
 */
 #include<set>
