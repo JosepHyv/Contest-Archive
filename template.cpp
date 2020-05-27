@@ -7,8 +7,10 @@ LANG: C++14
 
 */
 #include<set>
+#include<map>
 #include<cmath>
 #include<queue>
+#include<stack>
 #include<vector>
 #include<string>
 #include<climits>
