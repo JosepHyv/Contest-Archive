@@ -7,6 +7,11 @@ LANG: C++14
 INSPIRATION: Vanessa Rodriguez Medina 
 
 */
+
+// add Pragma for optimize the GCC compilation
+#pragma GCC optimize ("-O3")
+#pragma GCC optimize ("unroll-loops")
+
 #include<set>
 #include<map>
 #include<cmath>
