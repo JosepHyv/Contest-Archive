@@ -25,9 +25,7 @@ INSPIRATION: Vanessa Rodriguez Medina
 #include<algorithm>
 #define f first 
 #define s second
-#define All(x,n) x,x+n
 #define all(x) x.begin() , x.end()
-#define p(dat1, dat2) pair< dat1, dat2> 
 using namespace std;
 
 
@@ -46,6 +44,7 @@ void solve()
 
 int main()
 {
+	
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
 	
 	cin>>t;
