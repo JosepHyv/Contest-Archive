@@ -42,7 +42,7 @@ void solve()
 	return;
 }
 
-int main()
+main()
 {
 	
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
