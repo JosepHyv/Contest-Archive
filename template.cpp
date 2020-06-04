@@ -19,6 +19,7 @@ INSPIRATION: Vanessa Rodriguez Medina
 #include<stdio.h>
 #include<climits>
 #include<cstdlib>
+#include<stdio.h>
 #include<iostream>
 #include<algorithm>
 #define f first 
