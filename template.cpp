@@ -1,17 +1,14 @@
 /*
 code template that i made 
 for use in codeforces or others online contest
-
 ID: JosepHy	
 LANG: C++14
 INSPIRATION: Vanessa Rodriguez Medina 
-
 */
 
 // add Pragma for optimize the GCC compilation
 #pragma GCC optimize ("-O3")
 #pragma GCC optimize ("unroll-loops")
-
 #include<set>
 #include<map>
 #include<cmath>
@@ -19,6 +16,7 @@ INSPIRATION: Vanessa Rodriguez Medina
 #include<stack>
 #include<vector>
 #include<string>
+#include<stdio.h>
 #include<climits>
 #include<cstdlib>
 #include<iostream>
@@ -26,11 +24,15 @@ INSPIRATION: Vanessa Rodriguez Medina
 #define f first 
 #define s second
 #define all(x) x.begin() , x.end()
+#define mcm(a,b) a*b/__gcd(a,b);
 using namespace std;
 
 
+typedef double db;
 typedef long long int ll;
+typedef vector < int > vi;
 
+const ll mod = ll( 1e9)+7;
 const ll MAXN = ll( 1e6)+3;
 const ll INF = (1ll << 32 );
 
@@ -38,11 +40,11 @@ ll t,n,k;
 
 void solve()
 {
-	// -- edit me --
+	
 	return;
 }
 
-main()
+int main()
 {
 	
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
@@ -50,7 +52,7 @@ main()
 	cin>>t;
 	while( t--)
 	{
-		// create our solution c:
+		
 	}
 
 }
