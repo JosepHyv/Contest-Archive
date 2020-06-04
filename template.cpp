@@ -2,7 +2,7 @@
 code template that i made 
 for use in codeforces or others online contest
 ID: JosepHy	
-LANG: C++14
+LANG: C++17
 INSPIRATION: Vanessa Rodriguez Medina 
 */
 
@@ -28,7 +28,6 @@ INSPIRATION: Vanessa Rodriguez Medina
 #define mcm(a,b) a*b/__gcd(a,b);
 using namespace std;
 
-
 typedef double db;
 typedef long long int ll;
 typedef vector < int > vi;
@@ -41,7 +40,7 @@ ll t,n,k;
 
 void solve()
 {
-	
+	/// -- solveme :) ---
 	return;
 }
 
@@ -53,7 +52,7 @@ int main()
 	cin>>t;
 	while( t--)
 	{
-		
+		/// -- your solution here ---
 	}
 
 }
