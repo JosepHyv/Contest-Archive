@@ -15,7 +15,7 @@ INSPIRATION: Vanessa Rodriguez Medina
 #include<queue>
 #include<stack>
 #include<vector>
-#include<string>
+#include<cstring>
 #include<stdio.h>
 #include<climits>
 #include<cstdlib>
