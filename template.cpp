@@ -31,16 +31,18 @@ using namespace std;
 typedef double db;
 typedef long long int ll;
 typedef vector < int > vi;
+typedef vector < ll > vll;
 
 const ll mod = ll( 1e9)+7;
 const ll MAXN = ll( 1e6)+3;
 const ll INF = (1ll << 32 );
 
-ll t,n,k;
+/// in most problems always use int's for principal variables
+int  t,n,k;
 
 void solve()
 {
-	/// -- solveme :) ---
+	
 	return;
 }
 
@@ -52,7 +54,7 @@ int main()
 	cin>>t;
 	while( t--)
 	{
-		/// -- your solution here ---
+		solve();
 	}
 
 }
