@@ -33,8 +33,8 @@ typedef long long int ll;
 typedef vector < int > vi;
 typedef vector < ll > vll;
 
-const ll mod = ll( 1e9)+7;
-const ll MAXN = ll( 1e6)+3;
+const ll mod = 1e9+7;
+const ll MAXN = 1e6+3;
 const ll INF = (1ll << 32 );
 
 /// in most problems always use int's for principal variables
