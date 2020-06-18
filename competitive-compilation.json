@@ -1,3 +1,9 @@
+// This code is a comfiguration compilation for c++ 
+// en sublime-text ir a Tools→ Build System→ New Build System…(hasta el final en la parte inferior) e ingrese el contenido a continuación.
+// y dale a guardar como "nombre que quieras.sublime-build"
+// para usarlo debes presionar ctrl + shift + b para seleccionar el sistema de compilacion
+// despues de esto para todo archivo solo presiona ctrl + b para compilar
+// y en tu terminal solo manda al archivo ./a
 {
     "cmd": ["g++", "-std=gnu++11", "${file}", "-o", "${file_path}/a"],
     "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
