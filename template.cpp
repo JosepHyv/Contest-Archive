@@ -26,16 +26,19 @@ INSPIRATION: Vanessa Rodriguez Medina
 #define s second
 #define all(x) x.begin() , x.end()
 #define mcm(a,b) a*b/__gcd(a,b);
+#define pb(x) push_back(x)
 using namespace std;
 
 typedef double db;
 typedef long long int ll;
 typedef vector < int > vi;
 typedef vector < ll > vll;
-
+typedef pair< ll, ll > pll;
+typedef pair< int , int > pii;
 const ll mod = 1e9+7;
 const ll MAXN = 1e6+3;
-const ll INF = (1ll << 32 );
+const ll inf = (1ll << 32 );
+const ll ninf = (-1ll << 32);
 
 /// in most problems always use int's for principal variables
 int  t,n,k;
@@ -54,6 +57,7 @@ int main()
 	cin>>t;
 	while( t--)
 	{
+
 		solve();
 	}
 
