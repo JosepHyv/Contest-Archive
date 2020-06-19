@@ -11,15 +11,14 @@ INSPIRATION: Vanessa Rodriguez Medina
 #pragma GCC optimize ("unroll-loops")
 #include<set>
 #include<map>
+#include<list>
 #include<cmath>
 #include<queue>
 #include<stack>
 #include<vector>
+#include<cstdio>
 #include<cstring>
-#include<stdio.h>
-#include<climits>
 #include<cstdlib>
-#include<stdio.h>
 #include<iostream>
 #include<algorithm>
 #define f first 
