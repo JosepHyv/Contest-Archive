@@ -46,7 +46,7 @@ int querry(int nd, int i, int f, int li, int ld)
 	return querry(lf, i, mm, li, ld) + querry(lf+1, mm+1, f, li, ld);
 }
 
-main()
+int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
 	cin>>n;
