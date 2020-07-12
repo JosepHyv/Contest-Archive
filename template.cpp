@@ -20,12 +20,9 @@ INSPIRATION: Vanessa Rodriguez Medina
 #include<cstdlib>
 #include<iostream>
 #include<algorithm>
-#define f first 
-#define s second
 #define all(x) x.begin() , x.end()
 #define mcm(a,b) a*b/__gcd(a,b);
 #define pb(x) push_back(x)
-
 using namespace std;
 
 typedef double db;
@@ -34,10 +31,10 @@ typedef vector < int > vi;
 typedef vector < ll > vl;
 typedef pair < ll, ll > pll;
 typedef pair < int , int > pii;
-const ll mod = 1e9+7;
-const ll MAXN = 1e6+3;
-const ll inf = (1ll << 32 );
-const ll ninf = (-1ll << 32);
+constexpr ll mod = 1e9+7;
+constexpr ll MAXN = 1e6+3;
+constexpr ll inf = (1ll << 32 );
+constexpr ll ninf = (-1ll << 32);
 
 
 /// in most problems always use int's for principal variables
@@ -53,7 +50,7 @@ int main()
 	
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
-
 	cin>>t;
+	
 
 }
