@@ -33,8 +33,7 @@ typedef pair < ll, ll > pll;
 typedef pair < int , int > pii;
 constexpr ll mod = 1e9+7;
 constexpr ll MAXN = 1e6+3;
-constexpr ll inf = (1ll << 32 );
-constexpr ll ninf = (-1ll << 32);
+constexpr ll inf = 1ll << 32;
 
 
 /// in most problems always use int's for principal variables
@@ -51,6 +50,6 @@ int main()
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cin>>t;
-	
+
 
 }
