@@ -5,13 +5,13 @@ ID: JosepHy
 LANG: C++17
 INSPIRATION: Vanessa Rodriguez Medina 
 */
-/* add pragmas is not recomended but you can (:
-#pragma GCC optimize ("-O3")
-#pragma GCC optimize ("unroll-loops")*/
+//PROBLEM LINK:
+//PROBLEM FOLDER:
 #include<set>
 #include<map>
 #include<list>
 #include<cmath>
+#include<deque>
 #include<queue>
 #include<stack>
 #include<vector>
