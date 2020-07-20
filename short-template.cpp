@@ -1,6 +1,11 @@
 //PROBLEM LINK:
-//PROBLEM FOLDER:
+//PROBLEM PATH:
 #include<bits/stdc++.h>
+#define fi first 
+#define se second
+#define pb(x) push_back(x)
+#define all(x) x.begin(), x.end()
+#define mcm( a, b) a*b/__gcd(a,b)
 using namespace std;
 
 typedef double db;
@@ -18,5 +23,5 @@ int main()
 	ios::sync_with_stdio(false);
 	cin.tie(0);
 
-
+	
 }
