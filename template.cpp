@@ -6,7 +6,7 @@ LANG: C++17
 INSPIRATION: Vanessa Rodriguez Medina 
 */
 //PROBLEM LINK:
-//PROBLEM FOLDER:
+//PROBLEM PATH:
 #include<set>
 #include<map>
 #include<list>
@@ -16,13 +16,17 @@ INSPIRATION: Vanessa Rodriguez Medina
 #include<stack>
 #include<vector>
 #include<cstdio>
+#include<utility>
 #include<cstring>
 #include<cstdlib>
 #include<iostream>
 #include<algorithm>
-#define all(x) x.begin() , x.end()
-#define mcm(a,b) a*b/__gcd(a,b);
+#include<functional>
+#define fi first
+#define se second
 #define pb(x) push_back(x)
+#define mcm(a,b) a*b/__gcd(a,b);
+#define all(x) x.begin() , x.end()
 using namespace std;
 
 typedef double db;
