@@ -24,7 +24,7 @@ INSPIRATION: Vanessa Rodriguez Medina
 #include<functional>
 #define fi first
 #define se second
-#define pb(x) push_back(x)
+#define pb push_back
 #define mcm(a,b) a*b/__gcd(a,b);
 #define all(x) x.begin() , x.end()
 using namespace std;
