@@ -37,25 +37,15 @@ typedef vector < bool > mrk;
 typedef pair < ll, ll > pll;
 typedef pair < int , int > pii;
 typedef vector< vector< ll >> adj;
+typedef unsigned long long int ull;
 constexpr ll mod = 1e9+7;
 constexpr ll MAXN = 1e6+3;
 constexpr ll inf = 1ll << 32;
 
-
-/// in most problems always use int's for principal variables
-int  t,n,k;
-
-void solve()
-{
-	return;
-}
-
 int main()
 {
-	
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
-	cin>>t;
 
 
 }
