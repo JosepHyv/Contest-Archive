@@ -9,13 +9,13 @@
 #define mcm( a, b) a*b/__gcd(a,b)
 #define adj(x) vector<  vector < x > >  
 #define press(x) setprecision(x)<<fixed
+#define deb(x) cerr << #x << " is "<<x<<"\n"
 using namespace std;
 
 typedef long double ld;
 typedef set < int > si;
 typedef vector< int > vi;
 typedef long long int ll;
-typedef priority_queue pq;
 typedef set < string > ss;
 typedef pair < ll, ll > pll;
 typedef map < ll , ll > mll;
@@ -28,6 +28,18 @@ typedef pair < string , int > psi;
 typedef unsigned long long int ull;
 typedef vector < pair <int, int >  > vpii;
 typedef vector < pair < string, int > > vpsi;
+
+template < typename... T> 
+void read(T&... args)
+{
+	((cin >> args), ...);
+}
+
+template < typename... T > 
+void print(T... args)
+{
+	((cout << args <<" "), ...);
+}
 
 constexpr ll mod = 1e9+7;
 constexpr ll MAXN = 1e6+3;
@@ -42,5 +54,4 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	
 }
