@@ -4,22 +4,39 @@
 #define fi first 
 #define se second
 #define pb push_back
+#define sz(x) (int) x.size()
 #define all(x) x.begin(), x.end()
 #define mcm( a, b) a*b/__gcd(a,b)
+#define adj(x) vector<  vector < x > >  
+#define press(x) setprecision(x)<<fixed
 using namespace std;
 
-typedef double db;
+typedef long double ld;
+typedef set < int > si;
+typedef vector< int > vi;
 typedef long long int ll;
-typedef vector < int > vi;
-typedef vector < ll > vl;
-typedef vector < bool > mrk;
+typedef priority_queue pq;
+typedef set < string > ss;
 typedef pair < ll, ll > pll;
+typedef map < ll , ll > mll;
+typedef map < int, int > mii;
+typedef map < int, string> mis;
 typedef pair < int , int > pii;
-typedef vector< vector< ll >> adj;
+typedef map < string, int > msi;
+typedef set < long long int > sl;
+typedef pair < string , int > psi;
 typedef unsigned long long int ull;
+typedef vector < pair <int, int >  > vpii;
+typedef vector < pair < string, int > > vpsi;
+
 constexpr ll mod = 1e9+7;
 constexpr ll MAXN = 1e6+3;
-constexpr ll inf = 1ll << 32;
+constexpr int inf = 2e9;
+constexpr short dx4[] = {-1,0,1,0};
+constexpr short dy4[] = {0,1,0,-1};
+constexpr short dx8[] = {-1,-1,0,1,1,1,0,-1};
+constexpr short dy8[] = {-1,0,1,1,1,0,-1,-1};
+
 
 int main()
 {
