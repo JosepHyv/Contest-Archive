@@ -46,7 +46,7 @@ constexpr ll MAXN = 1e6+3;
 constexpr int inf = 2e9;
 constexpr short dx4[] = {-1,0,1,0};
 constexpr short dy4[] = {0,1,0,-1};
-constexpr short dx8[] = {-1,-1,0,1,1,1,0,-1};
+constexpr short dx8[] = {-1,-1,-1,0,1,1,1,0};
 constexpr short dy8[] = {-1,0,1,1,1,0,-1,-1};
 
 
