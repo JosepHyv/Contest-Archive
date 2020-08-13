@@ -5,6 +5,7 @@
 #define se second
 #define pb push_back
 #define sz(x) (int) x.size()
+#define space(x) getline(cin,x)
 #define all(x) x.begin(), x.end()
 #define mcm( a, b) a*b/__gcd(a,b)
 #define adj(x) vector<  vector < x > >  
