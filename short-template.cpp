@@ -53,7 +53,7 @@ void DBG( H h, T... t)
 		cerr<<", ";
 	DBG(t...);
 }
-#define dbg(...) cerr <<" values["<< #__VA_ARGS__ << "] -are-> [", DBG(__VA_ARGS__)
+#define dbg(...) cerr <<" values[ "<< #__VA_ARGS__ << " ] ---> [ ", DBG(__VA_ARGS__)
 
 template < typename... T> 
 void read(T&... args)
