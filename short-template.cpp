@@ -16,10 +16,9 @@ INSPIRATION: Vanessa Rodriguez Medina
 #define all(x) x.begin(), x.end()
 #define mcm( a, b) a*b/__gcd(a,b)
 #define adj(x) vector<  vector < x > >  
-#define press(x) setprecision(x)<<fixed
-#define deb(x) cerr << #x << " is "<<x<<"\n"
-#define deb2(x,y) cerr<<#x<<" is "<<x<<" , "<<#y<<"is"<<y<<"\n";
 #define clr(x) memset( x, 0, sizeof(x))
+#define press(x) setprecision(x)<<fixed
+#define deb(x) cerr<< #x<< "is "<< x<<"\n"
 using namespace std;
 
 typedef long double ld;
@@ -40,6 +39,22 @@ typedef unsigned long long int ull;
 typedef vector < pair <int, int >  > vpii;
 typedef vector < pair < string, int > > vpsi;
 
+void DBG()
+{
+	cerr<<"]\n";
+	return;
+}
+
+template<class H, class... T > 
+void DBG( H h, T... t)
+{
+	cerr << h;
+	if( sizeof...(t))
+		cerr<<", ";
+	DBG(t...);
+}
+#define dbg(...) cerr <<" values["<< #__VA_ARGS__ << "] -are-> [", DBG(__VA_ARGS__)
+
 template < typename... T> 
 void read(T&... args)
 {
@@ -59,7 +74,6 @@ constexpr short dx4[] = {-1,0,1,0};
 constexpr short dy4[] = {0,1,0,-1};
 constexpr short dx8[] = {-1,-1,-1,0,1,1,1,0};
 constexpr short dy8[] = {-1,0,1,1,1,0,-1,-1};
-
 
 int main()
 {
