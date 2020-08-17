@@ -1,3 +1,10 @@
+/*
+code template that i made 
+for use in codeforces or others online contest
+ID: JosepHy	
+LANG: C++17
+INSPIRATION: Vanessa Rodriguez Medina 
+*/
 //PROBLEM LINK:
 //PROBLEM PATH:
 #include<bits/stdc++.h>
@@ -11,6 +18,8 @@
 #define adj(x) vector<  vector < x > >  
 #define press(x) setprecision(x)<<fixed
 #define deb(x) cerr << #x << " is "<<x<<"\n"
+#define deb2(x,y) cerr<<#x<<" is "<<x<<" , "<<#y<<"is"<<y<<"\n";
+#define clr(x) memset( x, 0, sizeof(x))
 using namespace std;
 
 typedef long double ld;
@@ -23,6 +32,7 @@ typedef map < ll , ll > mll;
 typedef map < int, int > mii;
 typedef map < int, string> mis;
 typedef pair < int , int > pii;
+typedef pair < char , int > pci;
 typedef map < string, int > msi;
 typedef set < long long int > sl;
 typedef pair < string , int > psi;
