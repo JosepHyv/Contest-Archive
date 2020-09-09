@@ -11,6 +11,9 @@ INSPIRATION: Vanessa Rodriguez Medina
 #define fi first 
 #define se second
 #define pb push_back
+#define pob pop_back
+#define pof pop_front
+#define pf push_front
 #define sz(x) (int) x.size()
 #define space(x) getline(cin,x)
 #define all(x) x.begin(), x.end()
