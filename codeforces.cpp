@@ -1,10 +1,3 @@
-/*
-code template that i made 
-for use in codeforces or others online contest
-ID: JosepHy	
-LANG: C++17
-INSPIRATION: Vanessa Rodriguez Medina 
-*/
 //PROBLEM LINK:
 //PROBLEM PATH:
 #include<bits/stdc++.h>
@@ -30,17 +23,8 @@ typedef vector< int > vi;
 typedef long long int ll;
 typedef set < string > ss;
 typedef pair < ll, ll > pll;
-typedef map < ll , ll > mll;
-typedef map < int, int > mii;
-typedef map < int, string> mis;
 typedef pair < int , int > pii;
-typedef pair < char , int > pci;
-typedef map < string, int > msi;
-typedef set < long long int > sl;
-typedef pair < string , int > psi;
 typedef unsigned long long int ull;
-typedef vector < pair <int, int >  > vpii;
-typedef vector < pair < string, int > > vpsi;
 
 void DBG()
 {
@@ -77,6 +61,8 @@ constexpr short dx4[] = {-1,0,1,0};
 constexpr short dy4[] = {0,1,0,-1};
 constexpr short dx8[] = {-1,-1,-1,0,1,1,1,0};
 constexpr short dy8[] = {-1,0,1,1,1,0,-1,-1};
+
+
 
 int main()
 {
