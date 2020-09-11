@@ -42,16 +42,44 @@ void DBG( H h, T... t)
 }
 #define dbg(...) cerr <<" values[ "<< #__VA_ARGS__ << " ] ---> [ ", DBG(__VA_ARGS__)
 
+template < class A > void read( vector < A >& v);
+template < class A, size_t S > void read( array < A , S>& a);
+
 template < typename... T> 
 void read(T&... args)
 {
 	((cin >> args), ...);
 }
 
+template < class A >
+void read( vector< A > & x)
+{
+	for( auto &a: x)
+		read(a);
+}
+template < class A, size_t S> 
+void read( array < A, S > &x)
+{
+	for(auto &a: x)
+		read(a);
+}
+
 template < typename... T > 
 void print(T... args)
 {
 	((cout << args <<" "), ...);
+}
+
+template < typename... T > 
+void write(T... args)
+{
+	((cout<<args<<"\n"), ...);
+}
+template < class A > 
+void print(vector< A >&x)
+{
+	for(auto v:x)
+		print(v);
 }
 
 constexpr ll mod = 1e9+7;
@@ -68,4 +96,7 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
+
+	
+	
 }
