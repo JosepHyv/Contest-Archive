@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#define fi first
+#define se second
+#define sz(x) (int)x.size()
+#define all(x) x.begin(), x.end()
+using namespace std;
+
+typedef long long int ll;
+constexpr int maxn = 1e6+2;
+constexpr int inf = 2e9;
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	int ans = - inf , pans = 0 ;
+	int t = 10;
+	while( t--)
+	{
+		int x;
+		cin>>x;
+		if( x > ans)
+		{
+			ans = x;
+			pans = t;
+		}
+	}	
+	
+	cout<<ans<<" "<<9 - pans; 
+}
