@@ -12,16 +12,16 @@
 using namespace std;
  
 void DBG(){	cerr<<")\n";}
+template<class H, class... T > 
+void DBG( H h, T... t){cerr << h;if( sizeof...(t))cerr<<", ";DBG(t...);}
+#define dbg(...) cerr <<" values[ "<< #__VA_ARGS__ << " ] = ( ", DBG(__VA_ARGS__)
 template <typename T>
 ostream & operator <<(ostream &os, const vector < T >&v){os << "[";
 for(int c = 0 ; c<sz(v); c++){if(c > 0) os<<","; os<<v[c];}
 return os <<"] ";}
-template<typename T>
-ostream & operator <<(ostream &os, const pair < T, T>&sol ){
+template<class T1, class T2>
+ostream & operator <<(ostream &os, const pair < T1, T2>&sol ){
 os<<"("<<sol.fi<<", "<<sol.se;return os <<") ";}
-template<class H, class... T > 
-void DBG( H h, T... t){cerr << h;if( sizeof...(t))cerr<<", ";DBG(t...);}
-#define dbg(...) cerr <<" values[ "<< #__VA_ARGS__ << " ] = ( ", DBG(__VA_ARGS__)
 void press(int n = 15){	cout<<setprecision(n)<<fixed;}
 void setIO( string name = "")
 {
@@ -43,11 +43,28 @@ constexpr int inf = 2e9;
  
 ///aqui puede ir algo 
  
+long long int suma(long long int l, long long int r )
+{
+	long long int ans = 0 ;
+	ans = ((r * r ) + r) / 2;
+	ans -= (( l * l ) - l ) / 2;
+	return ans;
+}
  
 int main()
 {
  	setIO();
- 	
+ 	int n;
+ 	cin>>n;
+ 	long long int sum = suma(0, n);
+ 	while(n-- > 1)
+ 	{
+ 		int x;
+ 		cin>>x;
+ 		sum -= x;
+ 	}
+ 	cout<<sum;
+
  
 	cout<<"\n";
 }

@@ -12,16 +12,16 @@
 using namespace std;
  
 void DBG(){	cerr<<")\n";}
-template<class H, class... T > 
-void DBG( H h, T... t){cerr << h;if( sizeof...(t))cerr<<", ";DBG(t...);}
-#define dbg(...) cerr <<" values[ "<< #__VA_ARGS__ << " ] = ( ", DBG(__VA_ARGS__)
 template <typename T>
 ostream & operator <<(ostream &os, const vector < T >&v){os << "[";
 for(int c = 0 ; c<sz(v); c++){if(c > 0) os<<","; os<<v[c];}
 return os <<"] ";}
-template<class T1, class T2>
-ostream & operator <<(ostream &os, const pair < T1, T2>&sol ){
+template<typename T>
+ostream & operator <<(ostream &os, const pair < T, T>&sol ){
 os<<"("<<sol.fi<<", "<<sol.se;return os <<") ";}
+template<class H, class... T > 
+void DBG( H h, T... t){cerr << h;if( sizeof...(t))cerr<<", ";DBG(t...);}
+#define dbg(...) cerr <<" values[ "<< #__VA_ARGS__ << " ] = ( ", DBG(__VA_ARGS__)
  
 typedef long double ld; 
 typedef long long int ll;
