@@ -46,7 +46,7 @@ constexpr int inf = 2e9;
 bool solapan(pair < ll, ll > poste1, pair < ll, ll > poste2)
 {
 	//if(poste1 > poste2) swap(poste1, poste2);
-	return poste2.fi >= poste1.fi && poste2.se  <= poste1.se; 
+	return poste2.fi <= poste1.se;
 }
  
 int main()
@@ -97,7 +97,7 @@ int main()
  	}
 
  	//posters despues del barrido 
- 	dbg(posters);
+ //	dbg(posters);
  	// apilando construcción y construyendo conjunto
  	vector < pair < ll, ll > > mezcla;
  	for(ll a: posters)
@@ -122,15 +122,18 @@ int main()
  				inexistentes.insert(c);
  	
  	// imprimiendo mezcla
- 	dbg(mezcla);
+ //	dbg(mezcla);
  	for(ll a: inexistentes)
  	{
  		pair< ll, ll >  rango_actual = input[a - 1];
  		for(int c = 0 ; c<sz(mezcla)-1; c++)
  		{
- 			pair < ll, ll > rango_intermedio = {mezcla[c].second +1 , mezcla[c+1].fi -1}; 
- 			if(rango_intermedio.fi >= rango_actual.fi && rango_intermedio.se <= rango_actual.se)
- 				diferentes.insert(a);
+ 			if(mezcla[c+1].fi - mezcla[c].se > 1)
+ 			{
+	 			pair < ll, ll > rango_intermedio = {mezcla[c].second +1 , mezcla[c+1].fi -1}; 
+	 			if(rango_intermedio.fi >= rango_actual.fi && rango_intermedio.se <= rango_actual.se)
+	 				diferentes.insert(a);
+ 			}
  		}
  	}
  	cout<<sz(diferentes);
