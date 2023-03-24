@@ -12,16 +12,27 @@
 using namespace std;
  
 void DBG(){	cerr<<")\n";}
-template<class H, class... T > 
-void DBG( H h, T... t){cerr << h;if( sizeof...(t))cerr<<", ";DBG(t...);}
-#define dbg(...) cerr <<" values[ "<< #__VA_ARGS__ << " ] = ( ", DBG(__VA_ARGS__)
 template <typename T>
 ostream & operator <<(ostream &os, const vector < T >&v){os << "[";
 for(int c = 0 ; c<sz(v); c++){if(c > 0) os<<","; os<<v[c];}
 return os <<"] ";}
-template<class T1, class T2>
-ostream & operator <<(ostream &os, const pair < T1, T2>&sol ){
+template<typename T>
+ostream & operator <<(ostream &os, const pair < T, T>&sol ){
 os<<"("<<sol.fi<<", "<<sol.se;return os <<") ";}
+template<class H, class... T > 
+void DBG( H h, T... t){cerr << h;if( sizeof...(t))cerr<<", ";DBG(t...);}
+#define dbg(...) cerr <<" values[ "<< #__VA_ARGS__ << " ] = ( ", DBG(__VA_ARGS__)
+void press(int n = 15){	cout<<setprecision(n)<<fixed;}
+void setIO( string name = "")
+{
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	if(sz(name))
+	{
+		freopen((name+".in").c_str(), "r", stdin);
+		freopen((name+".out").c_str(), "w", stdout);
+	}
+}
  
 typedef long double ld; 
 typedef long long int ll;
@@ -31,26 +42,38 @@ constexpr int inf = 2e9;
  
  
 ///aqui puede ir algo 
- 
- 
+
+pair<int, string > competidores[22];
+
 int main()
 {
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout<<setprecision(15)<<fixed;
-	/*freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);*/
- 	
- 	srand(time(NULL));
- 	int n = rand() % 1000;
- 	vector < int > vx(n);
- 	iota(all(vx), 1);
- 	random_shuffle(all(vx));
- 	dbg(vx);
+ 	setIO();
 
- 
+ 	int n;
+ 	cin>>n;
+ 	for(int c = 0; c<n; c++)
+ 	{
+ 		cin>>competidores[c].second;
+ 		cin>>competidores[c].first;
+ 	}
+ 	string pregunta;
+ 	cin>>pregunta;
+
+ 	sort(competidores, competidores+n);
+
+ 	cout<<"cosas ordenadas\n";
+ 	for(int c= 0; c<n; c++)
+ 		cout<<competidores[c].first <<' ' << competidores[c].second << '\n';
+
+ 	for(int c = 0; c<n; c++)
+ 	{
+ 		if(pregunta == competidores[c].second)
+ 		{
+ 			cout<<competidores[c].first; //<<'\n';
+ 			break;
+ 		}
+ 	} 
 	cout<<"\n";
-	///uwu - vrm - Vanessa Rodriguez Medina <3
 }
 /* [°-°]  <- tss 
    [./../] <- este mensaje puede cambiar

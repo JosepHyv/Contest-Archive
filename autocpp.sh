@@ -8,5 +8,5 @@ file=$file.cpp
 echo "copping from $TEMPLATE_URL to $current"
 cp $TEMPLATE_URL $file
 echo "openning $file"
-subl $file
+micro $file
 
