@@ -104,7 +104,7 @@ def compile():
     compilation_line = 'g++ -std=gnu++17 {} {} -o {}'
 
     flags = [
-        ''
+        '-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -DDEBUG -ggdb3 -fmax-errors=2'
     ] 
     exec_name = 'a'
     
