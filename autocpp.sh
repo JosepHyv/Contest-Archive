@@ -1,6 +1,8 @@
 #!/usr/bin/sh
 
-TEMPLATE_URL=/home/josephy/Contest-Archive/CPTEMPLATES/cpUSACO.cpp
+TEMPLATE='aniei.cpp'
+
+TEMPLATE_URL=/home/josephy/Contest-Archive/CPTEMPLATES/${TEMPLATE}
 current=`pwd`
 file=$1
 echo "creating $file.cpp"

@@ -46,17 +46,22 @@ constexpr int inf = 2e9;
  
 int main()
 {
- 	setIO();
+ 	setIO("lostcow");
+ 	int x,y, ans = 0;
+ 	cin>>x>>y;
+ 	if(x > y ) swap(x, y);
+ 	int dist = 1;
+ 	while(x < y)
+ 	{
+ 		// dbg(x, ans);
+ 		ans += abs(x - y);
+ 		x += dist;
+ 		dist *= -2;
+ 	}
+ 	// dbg(ans);
+ 	cout<<ans;
  	
- 	int n = 10;
- 	vector < int > vx(n);
- 	srand(time(NULL));
- 	iota(all(vx), 1);
- 	random_shuffle(all(vx));
- 	for(int a : vx)
- 		cout<<a<<' ';
  
-	cout<<"\n";
 }
 /* [°-°]  <- tss 
    [./../] <- este mensaje puede cambiar

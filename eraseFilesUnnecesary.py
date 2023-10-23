@@ -4,7 +4,7 @@ import os
 import shutil
 import pathlib
 
-CODES = [".py", ".cpp", ".c", ".java", ".cc", ".sh"]
+CODES = [".py",".php", ".cpp", ".c", ".java", ".cc", ".sh"]
 
 def pathDir():
     return str(os.path.abspath(os.getcwd()))

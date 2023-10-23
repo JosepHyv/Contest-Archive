@@ -47,9 +47,22 @@ constexpr int inf = 2e9;
 int main()
 {
  	setIO();
+ 	int n,k;
+ 	cin>>n>>k;
+ 	vector < int > vx(n);
+ 	for(int c = 0; c<n; c++)
+ 	{
+ 		int x;
+ 		cin>>x;
+ 		vx[c] += x;
+ 		vx[c+1] += vx[c];
+ 	}
+ 	int ans = vx[k-1];
+ 	for(int c = k; c<n; c++)
+ 		ans = max(ans, (vx[c] - vx[c - k]));
 
- 	cout<<"hola Mundo";
- 
+	// dbg(vx); 
+	cout<<ans;
 	cout<<"\n";
 }
 /* [°-°]  <- tss 
