@@ -1,1 +1,1 @@
-alias cph='~/Contest-Archive/cphelper/./script.py'
+alias cph='~/Contest-Archive/scripts/cphelper/./script.py'
