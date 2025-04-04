@@ -3,10 +3,11 @@ code template that i made
 for use in codeforces or others online contest
 ID: JosepHy	
 LANG: C++17
-INSPIRATION: Vanessa Rodriguez Medina 
 */
-//PROBLEM LINK:
-//PROBLEM PATH:
+/*
+ *  Created by: HOST
+ *  Created At: DD/MM/YYYY : HH:MM:SS
+ */
 #include<bits/stdc++.h>
 #define fi first 
 #define se second
