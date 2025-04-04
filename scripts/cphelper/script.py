@@ -60,7 +60,8 @@ def extract_test_cases(test_cases: list[str]) -> list[str]:
     if len(test_cases) == 1:
         if os.path.isdir(test_cases[0]):
             test_cases = [
-                os.path.join(os.getcwd(), x) for x in os.listdir(test_cases[0])
+                os.path.join(os.getcwd(), test_cases[0], x)
+                for x in os.listdir(test_cases[0])
             ]
     return test_cases
 
