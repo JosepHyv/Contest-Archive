@@ -9,14 +9,14 @@ HOME = os.path.expanduser("~")
 TEMPLATE_DIR = f"{HOME}/Contest-Archive/CPTEMPLATES"
 SELECTED_TEMPLATE = "codeforces.cpp"
 COMPILER_PROPS = {"c": ["gcc", "c11"], "cpp": ["g++", "c++17"]}
-COMPILATION_STRING = "{} -std{} -static -DONLINE_JUDGE -fno-asm -lm -s -Wl,--stack=268435456 -O2 -Wall -Wextra -Wno-unused-variable -Wno-unused-function {} -o {}"
+COMPILATION_STRING = "{} -std={} -static -DONLINE_JUDGE -fno-asm -lm -s -W -O2 -Wall -Wextra -Wno-unused-variable -Wno-unused-function {} -o {}"
+COMPATIBLE_EXTENSIONS = ["c", "cpp"]
 
 
-def format_build_string(extension: str, name: str) -> str:
-    source_file = f"{name}{extension}"
-    compiler = COMPILER_PROPS[extension][0]
-    version = COMPILER_PROPS[extension][1]
-    return COMPILATION_STRING.format(compiler, version, source_file, name)
+def format_build_string(extension: str, name: str) -> list[str]:
+    source_file = os.path.join(os.getcwd(), f"{name}.{extension}")
+    compiler, version = COMPILER_PROPS[extension]
+    return split(COMPILATION_STRING.format(compiler, version, source_file, name))
 
 
 def is_executable(name: str) -> bool:
@@ -34,7 +34,27 @@ def is_executable(name: str) -> bool:
 
 
 def format_solution(buffer: list[str]) -> str:
-    pass
+    now = datetime.now().strftime("%d/%m/%Y : %H:%M:%S")
+    host = os.uname().nodename  # usar socket.gethostname()
+
+    formatted = []
+    replaced = False
+
+    for line in buffer:
+        if not replaced and line.strip().startswith("/*"):
+            formatted.append(
+                f"/*\n *  Created by: {host}\n *  Created At: {now}\n */\n"
+            )
+            replaced = True
+            skip = True
+            continue
+        if replaced and line.strip().startswith("*"):
+            continue
+        if replaced and line.strip().startswith("*/"):
+            continue
+        formatted.append(line)
+
+    return "".join(formatted)
 
 
 def extract_test_cases(test_cases: list[str]) -> list[str]:
@@ -48,10 +68,19 @@ def extract_test_cases(test_cases: list[str]) -> list[str]:
 
 def execute_solution(name: str, test_cases: list[str]):
     if not is_executable(name):
-        print(f"Error: {name} is nor an executable or there is no existe")
+        print(f"Error: {name} is not an executable")
         return
 
     test_cases = extract_test_cases(test_cases)
+
+    if not test_cases:
+        print("No test cases provided. Enter input manually:")
+        try:
+            subprocess.run(os.path.join(os.getcwd(), name), text=True)
+        except KeyboardInterrupt:
+            print("\n>>> Execution cancelled.")
+        return
+
     for case in test_cases:
         case_name = case.split("/")[-1]
         print(f"Executing {case_name}...")
@@ -74,26 +103,37 @@ def execute_solution(name: str, test_cases: list[str]):
 
 
 def compile_code(name: str):
-    name, extension = name.split(".")
+    if not os.path.exists(name) or not os.path.isfile(name):
+        print("Error: The source file does not exis")
+        return
+
+    if name.split(".")[-1].lower() not in COMPATIBLE_EXTENSIONS:
+        print("Error: The source file is not compatible")
+        return
+    name, extension = name.rsplit(".", 1)
     build_string = format_build_string(extension.lower(), name)
+    print(f"Compiling {name}...")
     try:
         result = subprocess.run(build_string, timeout=10, capture_output=True)
         if result.stderr:
             print(f"Failed to compile {name}")
-            print(result.stderr.strip())
+            print(result.stderr.decode().strip())
             return
+        print(">>> Compilation finished")
     except subprocess.TimeoutExpired:
         print(">>> compilation time out.")
     pass
 
 
 def create_solution(name: str):
-    with open(f"{TEMPLATE_DIR}/{SELECTED_TEMPLATE}", "r") as file:
-        # buffer = format_solution(file)
-        if len(name.split(".")) == 1:
-            name += ".cpp"
-        with open(name, "+w") as outbuffer:
-            outbuffer.write(file.read())
+    with open(os.path.join(TEMPLATE_DIR, SELECTED_TEMPLATE), "r") as file:
+        buffer = file.readlines()
+        formatted_code = format_solution(buffer)
+
+    if len(name.split(".")) == 1:
+        name += ".cpp"
+    with open(name, "+w") as outbuffer:
+        outbuffer.write(formatted_code)
 
 
 def main():
@@ -101,10 +141,10 @@ def main():
         prog="cphelper",
         description="tools to create, compile and run cp solutions in c/c++",
     )
-    parser.add_argument("default", nargs="?", type=str, help="compile a c/c++ file")
     parser.add_argument(
-        "--new", "-n", type=str, help="create new solution from template"
+        "default", nargs="?", type=str, help="create new solution from template"
     )
+    parser.add_argument("--build", "-b", type=str, help="compile a c/c++ file")
     parser.add_argument(
         "--run",
         "-r",
@@ -113,12 +153,17 @@ def main():
     )
     args = parser.parse_args()
 
-    if args.new:
-        print(f"Created: {args.new} on {os.getcwd()}")
-        create_solution(args.new)
+    if args.build:
+        compile_code(args.default)
 
     if args.run:
-        print(args.run)
+        executable = args.run[0]
+        test_cases = args.run[1:]
+        execute_solution(executable, test_cases)
+
+    if args.default:
+        print(f"Created: {args.default} on {os.getcwd()}")
+        create_solution(args.default)
 
 
 if __name__ == "__main__":
