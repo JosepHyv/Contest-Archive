@@ -35,18 +35,17 @@ def is_executable(name: str) -> bool:
 
 def format_solution(buffer: list[str]) -> str:
     now = datetime.now().strftime("%d/%m/%Y : %H:%M:%S")
-    host = os.uname().nodename  # usar socket.gethostname()
+    host = os.uname().nodename
 
     formatted = []
     replaced = False
-
-    for line in buffer:
+    subbuffer = buffer[:5]
+    for line in subbuffer:
         if not replaced and line.strip().startswith("/*"):
             formatted.append(
                 f"/*\n *  Created by: {host}\n *  Created At: {now}\n */\n"
             )
             replaced = True
-            skip = True
             continue
         if replaced and line.strip().startswith("*"):
             continue
@@ -54,7 +53,7 @@ def format_solution(buffer: list[str]) -> str:
             continue
         formatted.append(line)
 
-    return "".join(formatted)
+    return "".join([*formatted, *buffer[5::]])
 
 
 def extract_test_cases(test_cases: list[str]) -> list[str]:
@@ -91,7 +90,7 @@ def execute_solution(name: str, test_cases: list[str]):
                     stdin=file,
                     capture_output=True,
                     text=True,
-                    timeout=4,  # por si se cuelga
+                    timeout=4,
                 )
                 print(">>> Result:")
                 print(result.stdout.strip())
@@ -154,7 +153,7 @@ def main():
     args = parser.parse_args()
 
     if args.build:
-        compile_code(args.default)
+        compile_code(args.build)
 
     if args.run:
         executable = args.run[0]
